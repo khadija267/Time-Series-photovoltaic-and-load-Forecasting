@@ -27,9 +27,7 @@ A FastAPI application for making predictions using a trained model.
     pip install fastapi uvicorn pandas
 
 4. **Running the Application**
-
-**Start the server:**
-
+   Start the Server:
     ```bash
     uvicorn model_inference:app --reload
     
