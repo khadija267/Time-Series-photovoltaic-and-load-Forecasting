@@ -1,4 +1,4 @@
-# The EMSx dataset: historical photovoltaic and load deployed by FastAPI Prediction API
+# The EMSx dataset: historical photovoltaic and load Prediction deployed by FastAPI 
 
 A FastAPI application for making predictions using a trained prophet model.
 
