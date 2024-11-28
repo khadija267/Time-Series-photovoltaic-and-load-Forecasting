@@ -30,7 +30,8 @@ A FastAPI application for making predictions using a trained model.
 
 **Start the server:**
     ```bash
-    uvicorn main:app --reload
+    uvicorn model_inference:app --reload
+    ```
 
 
 - The application will be running at http://127.0.0.1:8000.
