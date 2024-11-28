@@ -39,7 +39,7 @@ A FastAPI application for making predictions using a trained model.
 To make a prediction, send a POST request to /predict/ with a JSON payload containing the file path to your CSV.
 
 ### Example
-You can use curl to make a request:
+**You can use curl to make a request:**
     ```bash
     curl -X POST "http://127.0.0.1:8000/predict/" -H "Content-Type: application/json" -d '{"file": "test.csv"}'
 
