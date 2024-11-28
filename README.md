@@ -22,11 +22,11 @@ A FastAPI application for making predictions using a trained model.
     source venv/bin/activate
     # Windows use `venv\Scripts\activate`
 
-**Install the required packages:**
+3. **Install the required packages:**
     ```bash
     pip install fastapi uvicorn pandas
 
-**Running the Application**
+4. **Running the Application**
 
 **Start the server:**
     ```bash
@@ -39,9 +39,13 @@ A FastAPI application for making predictions using a trained model.
 To make a prediction, send a POST request to /predict/ with a JSON payload containing the file path to your CSV.
 
 ### Example
+
 **You can use curl to make a request:**
-    ```bash
-    curl -X POST "http://127.0.0.1:8000/predict/" -H "Content-Type: application/json" -d '{"file": "test.csv"}'
+
+   ```bash
+
+      curl -X POST "http://127.0.0.1:8000/predict/" -H "Content-Type: application/json" -d '{"file": "test.csv"}'
+   ```
 
 ## CSV File Structure
 Your CSV file should contain the following columns:
@@ -52,10 +56,12 @@ Example of a valid CSV file:
 
 ### csv
 
+
 ds,y
-2023-01-01 10:00:00,10
-2023-01-02 10:00:00,15
-2023-01-03 10:00:00,20
+- 2023-01-01 10:00:00,10
+- 2023-01-02 10:00:00,15
+- 2023-01-03 10:00:00,20
+  
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
