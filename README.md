@@ -1,6 +1,9 @@
-# FastAPI Prediction API
+# The EMSx dataset: historical photovoltaic and load deployed by FastAPI Prediction API
 
-A FastAPI application for making predictions using a trained model.
+A FastAPI application for making predictions using a trained prophet model.
+
+## Data Link:
+https://www.kaggle.com/datasets/adri1g/the-emsx-dataset-historical-photovoltaic-and-load?select=1.csv
 
 ## Requirements
 
