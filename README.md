@@ -14,14 +14,13 @@ A FastAPI application for making predictions using a trained model.
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/fastapi-prediction-api.git
+   git clone https://github.com/your username/fastapi-prediction-api.git
    cd fastapi-prediction-api
 2. **Create a virtual environment (optional but recommended):**
     ```bash
-
-
     python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    source venv/bin/activate
+    # Windows use `venv\Scripts\activate`
 
 **Install the required packages:**
     ```bash
@@ -48,10 +47,10 @@ You can use curl to make a request:
 Your CSV file should contain the following columns:
 
 - ds: Dates in a format recognized by pandas (e.g., YYYY-MM-DD HH:MM:SS).
--y: Numeric values to be predicted.
+- y: Numeric values to be predicted.
 Example of a valid CSV file:
 
-csv
+### csv
 
 ds,y
 2023-01-01 10:00:00,10
