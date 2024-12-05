@@ -61,10 +61,4 @@ Example data files are provided in `data/input/`:
 - `/predict`: Make time series predictions
 - `/docs`: Interactive API documentation
 
-## Directory Structure
-├── app/
-│   ├── main.py         # Main API code
-│   └── config.py       # Configuration
-├── data/
-│   └── input/          # Input data files
-└── requirements.txt    # Dependencies
+
