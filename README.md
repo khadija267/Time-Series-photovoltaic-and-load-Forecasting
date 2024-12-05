@@ -13,65 +13,58 @@ https://www.kaggle.com/datasets/adri1g/the-emsx-dataset-historical-photovoltaic-
 - Pandas
 - Pickle (if using a pickled model)
 
-## Installation
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your username/fastapi-prediction-api.git
-   cd fastapi-prediction-api
-2. **Create a virtual environment (optional but recommended):**
-    ```bash
-    python -m venv venv
-    source venv/bin/activate
-    # Windows use `venv\Scripts\activate`
+## Setup
 
-3. **Install the required packages:**
-    ```bash
-    pip install fastapi uvicorn pandas
+1. Clone the repository:
+git clone [your-repository-url]
+cd Time-Series-photovoltaic-and-load-Forecasting
 
-4. **Running the Application**
-   Start the Server:
-    ```bash
-    uvicorn model_inference:app --reload
-    
+2. Create and activate virtual environment:
+python -m venv myenv
+source myenv/bin/activate  # On Windows: myenv\Scripts\activate
 
+3. Install dependencies:
+pip install -r requirements.txt
 
-- The application will be running at http://127.0.0.1:8000.
-- You can access the API documentation at http://127.0.0.1:8000/docs.
-## Usage
-To make a prediction, send a POST request to /predict/ with a JSON payload containing the file path to your CSV.
+## Running the API
 
-### Example
+Start the server:
+python app/main.py
+The API will be available at http://localhost:8000
 
-**You can use curl to make a request:**
+## Testing the API
 
-   ```bash
+### 1. Health Check
+- Open http://localhost:8000/health in your browser
+- Should receive a response confirming the service is healthy
 
-      curl -X POST "http://127.0.0.1:8000/predict/" -H "Content-Type: application/json" -d '{"file": "test.csv"}'
-   ```
+### 2. Making Predictions
+Using Swagger UI (Recommended):
+1. Visit http://localhost:8000/docs
+2. Click on POST /predict endpoint
+3. Click "Try it out"
+4. Upload your CSV file (from data/input folder)
+5. Click "Execute"
 
-## CSV File Structure
-Your CSV file should contain the following columns:
+### Input Data Format
+Your CSV file should contain:
+- 'ds' column: datetime values
+- 'y' column: target values
 
-- ds: Dates in a format recognized by pandas (e.g., YYYY-MM-DD HH:MM:SS).
-- y: Numeric values to be predicted.
-Example of a valid CSV file:
+Example data files are provided in `data/input/`:
+- test.csv
+- train.csv
 
-### csv
+## API Endpoints
+- `/health`: Check if service is running
+- `/predict`: Make time series predictions
+- `/docs`: Interactive API documentation
 
-
-ds,y
-- 2023-01-01 10:00:00,10
-- 2023-01-02 10:00:00,15
-- 2023-01-03 10:00:00,20
-  
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-
-### Instructions for Use
-
-1. Replace `your-username` in the clone command URL with your actual GitHub username.
-2. Save this content in a file named `README.md` in your project directory.
-
-This README provides clear instructions on setting up and running your FastAPI application. If you have any additional information or features to add, feel free to modify it as needed!
+## Directory Structure
+├── app/
+│   ├── main.py         # Main API code
+│   └── config.py       # Configuration
+├── data/
+│   └── input/          # Input data files
+└── requirements.txt    # Dependencies
