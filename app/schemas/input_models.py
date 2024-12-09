@@ -1,24 +1,25 @@
 from pydantic import BaseModel
 import pandas as pd
-from typing import Tuple
+from typing import Tuple, Date, List
 
-class BaseDataFrameValidator:
-    """Base validator for any DataFrame input"""
-    def __init__(self, df: pd.DataFrame):
-        self.df = df
+class InputRow(BaseModel):
+    ds:Date
     
-    def validate(self) -> Tuple[bool, str]:
-        """Basic validation any DataFrame should pass"""
-        if self.df is None:
-            return False, "DataFrame cannot be None"
+class BaseDataFrameValidator(BaseModel):
+    df:List[InputRow]
+    
+    # def validate(self) -> Tuple[bool, str]:
+    #     """Basic validation any DataFrame should pass"""
+    #     if self.df is None:
+    #         return False, "DataFrame cannot be None"
             
-        if self.df.empty:
-            return False, "DataFrame is empty"
+    #     if self.df.empty:
+    #         return False, "DataFrame is empty"
             
-        if len(self.df) < 2:
-            return False, "DataFrame must have at least 2 rows"
+    #     if len(self.df) < 2:
+    #         return False, "DataFrame must have at least 2 rows"
             
-        return True, ""
+    #     return True, ""
 
 class ProphetValidator(BaseDataFrameValidator):
     """Specific validator for Prophet time series data"""
